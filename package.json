@@ -1,0 +1,18 @@
+{
+  "name": "hh-weightlifting",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static site for HH Weightlifting in Strand.",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource/oswald": "^5.2.8",
+    "@fontsource/source-sans-3": "^5.2.8",
+    "astro": "^7.3.5"
+  }
+}

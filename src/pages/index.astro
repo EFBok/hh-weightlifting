@@ -1,0 +1,157 @@
+---
+import Base from '../layouts/Base.astro';
+
+const description =
+  'HH Weightlifting — also known as Strand Weightlifting and Hottentots Holland Weightlifting — is the Helderberg’s long-standing Olympic weightlifting club. Since 1950.';
+---
+
+<Base title="HH Weightlifting · Strand" description={description}>
+  <section class="hero" id="top" aria-labelledby="hero-heading">
+    <img
+      class="hero-media"
+      src="/images/lifter-platform.webp"
+      width="1695"
+      height="2400"
+      alt="A weightlifter locks a barbell overhead on the competition platform at HH Weightlifting in Strand."
+      fetchpriority="high"
+      decoding="async"
+    />
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">HH Weightlifting · Strand · Since 1950</p>
+      <h1 id="hero-heading">Lift where Helderberg strength <span>began.</span></h1>
+      <p class="lede">Olympic weightlifting in Strand — community, history, and the platform.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#about">About the club</a>
+        <a class="button button-ghost" href="#training">Training</a>
+      </div>
+    </div>
+    <ul class="hero-facts">
+      <li>
+        <span>Place</span>
+        <strong>Strand</strong>
+      </li>
+      <li>
+        <span>Founded</span>
+        <strong>1950</strong>
+      </li>
+      <li>
+        <span>Discipline</span>
+        <strong>Olympic weightlifting</strong>
+      </li>
+    </ul>
+  </section>
+
+  <section class="band about" id="about" aria-labelledby="about-heading">
+    <div class="band-inner about-grid">
+      <div>
+        <p class="kicker">About</p>
+        <h2 id="about-heading">The Helderberg’s Olympic weightlifting club</h2>
+        <div class="prose">
+          <p>
+            HH Weightlifting — also known as Strand Weightlifting and Hottentots Holland Weightlifting — is the
+            Helderberg’s long-standing Olympic weightlifting club. From its founding in 1950 to today’s platforms in
+            Strand, the club has developed lifters for provincial, national, and international competition while
+            remaining a local home for technique, strength, and community.
+          </p>
+        </div>
+      </div>
+      <figure class="about-photo">
+        <img
+          src="/images/club-members.webp"
+          width="1200"
+          height="1488"
+          alt="HH Weightlifting members stand together in the Strand club gym, holding bars and plates."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>The club in Strand.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band history" id="history" aria-labelledby="history-heading">
+    <div class="band-inner">
+      <p class="kicker">History</p>
+      <h2 id="history-heading">From 1950 to today’s platforms</h2>
+      <div class="prose">
+        <p>
+          HH Weightlifting has been the Helderberg’s home for Olympic weightlifting since 1950. The same club is known
+          as Strand Weightlifting and Hottentots Holland Weightlifting. Its platforms in Strand have developed lifters
+          for provincial, national, and international competition.
+        </p>
+      </div>
+      <ul class="history-list">
+        <li>
+          <span class="year">1950</span>
+          <h3>Founded</h3>
+          <p>The club begins in the Helderberg and is still lifting in Strand.</p>
+        </li>
+        <li>
+          <span class="year">Names</span>
+          <h3>One club</h3>
+          <p>HH Weightlifting, Strand Weightlifting, and Hottentots Holland Weightlifting.</p>
+        </li>
+        <li>
+          <span class="year">The platform</span>
+          <h3>Competition</h3>
+          <p>A local home that has prepared lifters beyond the Helderberg.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band training" id="training" aria-labelledby="training-heading">
+    <div class="band-inner">
+      <p class="kicker">Training</p>
+      <h2 id="training-heading">Technique, strength, and community</h2>
+      <div class="prose">
+        <p>
+          Training at HH Weightlifting is Olympic weightlifting on the platform in Strand: the snatch and the clean and
+          jerk, learned and practised with the club. It remains a local home for technique, strength, and community.
+        </p>
+      </div>
+      <div class="training-panel">
+        <p>
+          Session times and fees are not listed here. Confirm them with the club — phone and email will be added when
+          they are confirmed.
+        </p>
+        <a
+          class="button button-primary"
+          href="https://www.instagram.com/hh_weightlifting/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band contact" id="contact" aria-labelledby="contact-heading">
+    <div class="band-inner">
+      <p class="kicker">Contact</p>
+      <h2 id="contact-heading">Find the club</h2>
+      <div class="contact-grid">
+        <article class="contact-card">
+          <h3>Address</h3>
+          <address>
+            10 Church Street<br />
+            Strand, 7139
+          </address>
+          <p>Directory listing — confirm before visiting.</p>
+        </article>
+        <article class="contact-card">
+          <h3>Instagram</h3>
+          <p>
+            <a href="https://www.instagram.com/hh_weightlifting/" target="_blank" rel="noopener noreferrer"
+              >@hh_weightlifting</a
+            >
+          </p>
+          <p>Phone and email are not published until the club confirms them.</p>
+        </article>
+      </div>
+      <p class="note">HH Weightlifting · Strand · Since 1950</p>
+    </div>
+  </section>
+</Base>
