@@ -1,0 +1,11 @@
+# Astro 7 needs Node >= 22.12.0. Nixpacks defaults to Node 18.
+# NIXPACKS_NODE_VERSION selects major 22. The archive below is the one
+# current Nixpacks uses for nodejs_22, and that snapshot is Node 22.14.0.
+# https://github.com/NixOS/nixpkgs/blob/e6f23dc08d3624daab7094b701aa3954923c6bbb/pkgs/development/web/nodejs/v22.nix
+
+[variables]
+NIXPACKS_NODE_VERSION = "22"
+
+[phases.setup]
+nixPkgs = ["nodejs_22"]
+nixpkgsArchive = "e6f23dc08d3624daab7094b701aa3954923c6bbb"
