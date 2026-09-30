@@ -23,7 +23,13 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-h) + 0.75rem);
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+}
+
+main section:not(.hero),
+main h2,
+main h3 {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
 }
 
 body {
@@ -82,22 +88,24 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 30;
-  height: var(--header-h);
+  z-index: 50;
+  isolation: isolate;
+  min-height: var(--header-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 0 1.25rem;
-  background: rgba(9, 9, 11, 0.9);
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  padding: 0.4rem 1.25rem;
+  background: #09090b;
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(14px);
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 0.7rem;
+  min-width: 0;
   text-decoration: none;
   min-height: 44px;
 }
@@ -117,7 +125,7 @@ a {
 .brand-text {
   font-family: var(--font-display);
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.95rem;
 }
@@ -210,12 +218,18 @@ a {
   transform: rotate(-45deg);
 }
 
+.mobile-nav {
+  position: relative;
+  flex: 0 0 auto;
+}
+
 .mobile-nav nav {
   position: absolute;
-  right: 1.25rem;
-  top: calc(var(--header-h) - 0.35rem);
+  right: 0;
+  top: calc(100% + 0.45rem);
+  z-index: 2;
   min-width: min(18rem, calc(100vw - 2.5rem));
-  background: var(--bg-2);
+  background: #121216;
   border: 1px solid var(--line);
   padding: 0.4rem;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
@@ -462,39 +476,8 @@ h2 {
     var(--bg);
 }
 
-.history-list {
-  list-style: none;
-  margin: 2rem 0 0;
-  padding: 0;
-  display: grid;
-  gap: 1rem;
-}
-
-.history-list li {
-  padding: 1.25rem 1.15rem 1.35rem;
-  background: var(--bg-3);
-  border-top: 3px solid var(--accent);
-}
-
-.history-list h3 {
-  margin: 0.35rem 0 0.4rem;
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 1.45rem;
-}
-
-.history-list p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.year {
-  color: var(--faint);
-  font-family: var(--font-display);
-  letter-spacing: 0.14em;
-  font-size: 0.78rem;
+.history .prose {
+  max-width: 46rem;
 }
 
 .training {
@@ -623,6 +606,47 @@ h2 {
   font-size: 1.2rem;
 }
 
+.club-line {
+  margin: 0.85rem 0 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+}
+
+.confirm-label {
+  margin: 0.7rem 0 0;
+  color: var(--accent);
+  font-family: var(--font-display);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.contact-card.visit {
+  border-left: 4px solid var(--accent);
+}
+
+.contact-card .button {
+  margin-top: 1rem;
+}
+
+.federation {
+  margin: 1.25rem 0 0;
+  color: var(--faint);
+  font-size: 0.95rem;
+}
+
+.federation a {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.federation a:hover {
+  color: var(--accent);
+}
+
 .contact-card p,
 .contact-card address {
   margin: 0.7rem 0 0;
@@ -715,12 +739,12 @@ h2 {
     border-left: 1px solid var(--line);
   }
 
-  .history-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .contact-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-card.visit {
+    grid-column: 1 / -1;
   }
 
   .training-visit {
@@ -747,9 +771,21 @@ h2 {
   }
 }
 
+@media (max-width: 420px) {
+  .brand-text {
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+  }
+
+  .site-header {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+}
+
 @media (min-width: 880px) {
   .site-header {
-    padding: 0 2rem;
+    padding: 0.4rem 2rem;
   }
 
   .mobile-nav {
