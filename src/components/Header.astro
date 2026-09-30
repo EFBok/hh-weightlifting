@@ -1,0 +1,64 @@
+---
+const links = [
+  { href: '#top', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#history', label: 'History' },
+  { href: '#training', label: 'Training' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="#top">
+    <span class="brand-mark">HH</span>
+    <span class="brand-text">Weightlifting</span>
+  </a>
+
+  <nav class="desktop-nav" aria-label="Primary">
+    <ul>
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <details class="mobile-nav">
+    <summary>
+      <span class="menu-bars" aria-hidden="true"></span>
+      Menu
+    </summary>
+    <nav aria-label="Primary">
+      <ul>
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </details>
+</header>
+
+<script>
+  const mobileNav = document.querySelector('.mobile-nav');
+  mobileNav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (mobileNav instanceof HTMLDetailsElement) {
+        mobileNav.open = false;
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && mobileNav instanceof HTMLDetailsElement) {
+      mobileNav.open = false;
+    }
+  });
+</script>
