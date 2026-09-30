@@ -4,6 +4,9 @@
   "private": true,
   "description": "Static site for HH Weightlifting in Strand.",
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
